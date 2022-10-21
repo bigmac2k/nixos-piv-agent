@@ -70,7 +70,7 @@
                 pkgs.pinentry-gtk2
               ]}
             '';
-            meta = with pkgs.lib; {
+            meta = {
               description = "piv-agent";
               homepage = "https://github.com/smlx/piv-agent";
             };
@@ -82,8 +82,23 @@
 
         devShell = pkgs.mkShell {
           buildInputs = [
-            defaultPackage
-            pkgs.go_1_18
+            pkgs.go_1_19
+            pkgs.mockgen
+            (pkgs.buildGoModule rec {
+              name = "enumer";
+              version = "1.5.7";
+              src = pkgs.fetchFromGitHub {
+                owner = "dmarkham";
+                repo = name;
+                rev = "v${version}";
+                sha256 = "sha256-2fVWrrWOiCtg7I3Lul2PgQ2u/qDEDioPSB61Tp0rfEo=";
+              };
+              vendorSha256 = "sha256-BmFv0ytRnjaB7z7Gb+38Fw2ObagnaFMnMhlejhaGxsk=";
+              meta = {
+                description = "enumer";
+                homepage = "https://github.com/dmarkham/enumer";
+              };
+            })
           ];
         };
       }
