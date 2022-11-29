@@ -13,7 +13,7 @@ This is currently work in progress.
 `configuration.nix`
 ```
   inputs = {
-    piv-agent.url = "git+ssh://git@sven.cc:222/scm/nix-piv-agent";
+    piv-agent.url = "github:scm2342/nixos-piv-agent";
   };
 
   outputs = inputs @ {
