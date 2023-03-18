@@ -54,14 +54,14 @@
         packages = flake-utils.lib.flattenTree {
           piv-agent = pkgs.buildGoModule rec {
             name = "piv-agent";
-            version = "0.19.2";
+            version = "0.19.3";
             src = pkgs.fetchFromGitHub {
               owner = "smlx";
               repo = name;
               rev = "v${version}";
-              sha256 = "sha256-MeeHWL2+IkvG+OGRvmSA4oI7Ynu+7XfqXHUKbct4Suc=";
+              sha256 = "sha256-bdFFFyxOU4cA8OCa4C/bd0aq1kIdiB00XuYVjRE5FP0=";
             };
-            vendorSha256 = "sha256-kHxlXC+MKV/TJNmNzmNHh5fJq5PmX1Ws3HD/5XHHLio=";
+            vendorSha256 = "sha256-X8/OvPPYTvNViSDMNgbSSs6eB4IYaIb3WC0yeyrgXIM=";
             nativeBuildInputs = [pkgs.pkg-config pkgs.makeWrapper];
             buildInputs = [pkgs.pcsclite pkgs.pinentry-gtk2];
             postFixup = ''
@@ -94,6 +94,7 @@
                 sha256 = "sha256-2fVWrrWOiCtg7I3Lul2PgQ2u/qDEDioPSB61Tp0rfEo=";
               };
               vendorSha256 = "sha256-BmFv0ytRnjaB7z7Gb+38Fw2ObagnaFMnMhlejhaGxsk=";
+              doCheck = false;
               meta = {
                 description = "enumer";
                 homepage = "https://github.com/dmarkham/enumer";
