@@ -54,14 +54,14 @@
         packages = flake-utils.lib.flattenTree {
           piv-agent = pkgs.buildGoModule rec {
             name = "piv-agent";
-            version = "0.19.3";
+            version = "0.20.1";
             src = pkgs.fetchFromGitHub {
               owner = "smlx";
               repo = name;
               rev = "v${version}";
-              sha256 = "sha256-bdFFFyxOU4cA8OCa4C/bd0aq1kIdiB00XuYVjRE5FP0=";
+              sha256 = "sha256-DljiNRXaL38gpgKkbM4vBHlP05sEF+6iOG1yMUPGZIc=";
             };
-            vendorSha256 = "sha256-X8/OvPPYTvNViSDMNgbSSs6eB4IYaIb3WC0yeyrgXIM=";
+            vendorSha256 = "sha256-SKZBXYdh8l/fJpvYKqrPPDB7HRMHZCnMTcq8049Kb+g=";
             nativeBuildInputs = [pkgs.pkg-config pkgs.makeWrapper];
             buildInputs = [pkgs.pcsclite pkgs.pinentry-gtk2];
             postFixup = ''
