@@ -6,20 +6,18 @@
       url = "github:edolstra/flake-compat";
       flake = false;
     };
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
   };
   outputs = {
     self,
     nixpkgs,
     flake-utils,
     flake-compat,
-    alejandra,
   }:
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in rec {
-        formatter = alejandra.defaultPackage.${system};
+        formatter = pkgs.alejandra;
         nixosModules.piv-agent = {
           lib,
           config,
