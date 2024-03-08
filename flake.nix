@@ -57,9 +57,9 @@
               owner = "smlx";
               repo = name;
               rev = "v${version}";
-              sha256 = "sha256-DljiNRXaL38gpgKkbM4vBHlP05sEF+6iOG1yMUPGZIc=";
+              hash = "sha256-DljiNRXaL38gpgKkbM4vBHlP05sEF+6iOG1yMUPGZIc=";
             };
-            vendorSha256 = "sha256-SKZBXYdh8l/fJpvYKqrPPDB7HRMHZCnMTcq8049Kb+g=";
+            vendorHash = "sha256-SKZBXYdh8l/fJpvYKqrPPDB7HRMHZCnMTcq8049Kb+g=";
             nativeBuildInputs = [pkgs.pkg-config pkgs.makeWrapper];
             buildInputs = [pkgs.pcsclite pkgs.pinentry-gtk2];
             postFixup = ''
