@@ -52,14 +52,14 @@
         packages = flake-utils.lib.flattenTree {
           piv-agent = pkgs.buildGoModule rec {
             name = "piv-agent";
-            version = "0.21.0";
+            version = "0.21.2";
             src = pkgs.fetchFromGitHub {
               owner = "smlx";
               repo = name;
               rev = "v${version}";
-              hash = "sha256-aukcnubhB8kbAl22eeFKzLPvVcYdgcEQ1gy3n6KWG00=";
+              hash = "sha256-nHxtQaQ5Lc0QAJrWU6fUWViDwOKkxVyj9/B6XZ+Y0zw=";
             };
-            vendorHash = "sha256-1d6EKEvo4XNDXRtbdnKkqyF9y0LPPHWKu9X/wYnbmas=";
+            vendorHash = "sha256-L5HuTYA01w3LUtSy7OVxG6QN5uQZ8LVYyrBcJQTkIUA=";
             nativeBuildInputs = [pkgs.pkg-config pkgs.makeWrapper];
             buildInputs = [pkgs.pcsclite pkgs.pinentry-gtk2];
             postFixup = ''
@@ -80,18 +80,18 @@
 
         devShell = pkgs.mkShell {
           buildInputs = [
-            pkgs.go_1_19
+            pkgs.go_1_22
             pkgs.mockgen
             (pkgs.buildGoModule rec {
               name = "enumer";
-              version = "1.5.7";
+              version = "1.5.9";
               src = pkgs.fetchFromGitHub {
                 owner = "dmarkham";
                 repo = name;
                 rev = "v${version}";
-                sha256 = "sha256-2fVWrrWOiCtg7I3Lul2PgQ2u/qDEDioPSB61Tp0rfEo=";
+                hash = "sha256-NYL36GBogFM48IgIWhFa1OLZNUeEi0ppS6KXybnPQks=";
               };
-              vendorSha256 = "sha256-BmFv0ytRnjaB7z7Gb+38Fw2ObagnaFMnMhlejhaGxsk=";
+              vendorHash = "sha256-CJCay24FlzDmLjfZ1VBxih0f+bgBNu+Xn57QgWT13TA=";
               doCheck = false;
               meta = {
                 description = "enumer";
